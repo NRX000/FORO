@@ -1,0 +1,284 @@
+/* Estilo global */
+
+
+*{
+ box-sizing: border-box; /*tamaño del cuadro para incluir relleno */
+
+}
+
+html {
+    font-size:14px;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
+a {   /*links */
+    color: #6f00ff;
+    font-weight: bolder ; /*para que sea mas gordita */
+    text-decoration: none; /*quita el subrayado */
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: bolder;
+    text-align: center;
+
+
+}
+
+/* PAGINA DE INICIO */
+
+.contenedor-pagina-inicio {
+    margin: 20px;
+    padding: 20px;
+}
+
+.subforo {
+    margin-top: 20px;
+}
+
+.titulo-subforo {
+    background-color: #44464b;
+    padding: 5px; /*relleno*/
+    border-radius: 5px;
+    margin: 4px;
+
+}
+
+.subforo-descripcion *{
+    margin-block: 0;
+
+}
+
+.subforo-fila {
+    display: grid; /* 4 columnas en una fila */
+    grid-template-columns: 7% 60% 13% 20%; /* tamaño de cada fila */
+}
+
+.subforo-columna {
+    padding: 10px;
+    margin: 4px;
+    border-radius: 5px;
+    background-color: #292b2e;
+}
+
+.centro { /*para centrar el icono en el medio del bloque*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.icono-subforo i{
+    font-size: 25px;
+}
+
+.subforo-divisor {  /* Para agregar espaciado entre cada fila */
+    display: block;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(190, 190, 190, 0), rgba(255, 255, 255, 0.75), rgba(190, 190, 190, 0));
+    /* propiedad de degradado lineal para la linea que desaparece */
+}
+
+
+
+/* Para celulares*/
+
+@media screen and (max-width: 460px) { /* Esto es para que en los dispositivos se vea bien y solo aqui se haran los cambio */
+    .contenedor-pagina-inicio {
+        margin: 10px; /* Reduzco el relleno */
+        padding: 10px;
+    }
+    .subforo-fila {
+        display: grid;
+        grid-template-columns: 25% 75%; /* Solo dos columnas */
+        grid-template-rows: 65% 35%;
+
+    }
+
+    .icono-subforo i{
+        font-size: 35px;
+    }
+
+    .estadisticas {
+        font-size: 12px;
+    }
+
+}
+
+
+/* BARRA DE NAVEGACION */
+
+header {
+
+    margin-inline: 10px; /* Un poco de espaciado */
+
+
+}
+
+.barra-navegacion { 
+    display: flex;
+    align-items: center;
+}
+
+.barra {
+    background-color: #6000b9;
+    padding: 5px;
+    width: 32%;
+    display: inline-block;
+    border-radius: 10px;
+    max-height: 70px; /* Alineamos */
+    margin-right: 15px;
+}
+
+.lista-navegacion {
+    list-style-type: none; /*Eliminamos los puntos de la lista */
+    overflow: hidden;  /*Ocultar contenido que se desborde del div */
+
+}
+
+.items a{
+    float: right; /* para moverlos al lado derecho y en linea */
+    display: block;
+    text-align: center;
+    margin-inline: 20px; /* para alinear los items  */
+    font-size: 15px;
+    padding: 5px ;
+    color: aliceblue;
+}
+
+.items a:hover {
+    background-color: rgb(0, 0, 0, 0.1); /* fondo desvanecido de boton cuando pasamos el cursor */
+    border-radius: 10px;
+
+}
+
+.icono-cerrar i{
+
+    font-size: 30px;
+    float: left; /* Alinear los items con el icono */
+    cursor: pointer; /* Poder clickear */  
+     
+
+}
+
+.ocultar {
+    display: none;
+}
+
+.icono-barritas {
+    font-size: 50px;
+    display: inline-block; /* para colocar uno al lado del otro */
+    margin-right: 10px; /* para separar el inline block */
+    color: #fff;
+    cursor: pointer;
+}
+
+/* FUENTES Y LOGO */
+
+@font-face {
+    font-family: SiegraRegular-ALg9A;
+    src: url(./SiegraRegular-ALg9A.otf);
+}
+
+.logo {
+    font-size: 70px;
+    display: inline-block;
+    font-family: SiegraRegular-ALg9A;
+
+}
+
+/* CUADRO DE BUSQUEDA */
+
+.cuadro {
+    border: solid 0px #6000b9;
+    margin-top: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+input {
+	box-sizing: border-box;
+	height: 69px;
+	width: 40px;
+	padding: 0 20px;
+	color: #000;
+	border-radius: 50px;
+	font-size: 20px;
+	border: 1.5px solid #6e00d5;
+	transition: all .7s ease;
+    
+}
+
+::placeholder {
+	color: grey;
+}
+
+.boton1 {
+    display: flex;
+	flex-direction: row-reverse;
+}
+
+.boton1 i {
+	font-size: 25px;
+	color: white;
+	line-height: 80px;
+	transition: all .7s ease;
+    right: auto;
+	top: auto;
+	width: 70px;
+	height: 70px;
+	background: #9100d5;
+	line-height: 70px;
+	border-radius: 50%;
+	text-align: center;
+	cursor: pointer;
+	transition: .5s;
+}
+
+.boton1:hover i{
+	transform: rotate(-360deg);
+    background: #290185;
+}
+
+
+.cuadro1 input {
+    outline: none;
+    border: 0;
+}
+
+.cuadro1 :hover input  {
+    width: 350px;
+    display: block;
+}
+
+
+.boton1 .input-text {
+    display: none;
+}
+
+
+/* INFORMACION DE FORO */
+
+.info {
+    padding: 16px;
+    background-color: #292b2e ;
+    border-radius: 10px;
+}
+
+.stats {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #6000b9;
+    display: block;
+    text-align: center;
+}
